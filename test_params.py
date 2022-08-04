@@ -18,13 +18,13 @@ def browser_config(browser_size):
 
 
 @pytest.mark.parametrize("browser_size", [(1360, 768)], indirect=True)
-def test_github_desktop(browser_size):
+def test_github_signin_desktop(browser_size):
     browser.open(url)
     browser.element(link_text('Sign in')).click()
 
 
 @pytest.mark.parametrize("browser_size", [(320, 480)], indirect=True)
-def test_github_mobile(browser_size):
+def test_github_signin_mobile(browser_size):
     browser.open(url)
     browser.element('[class="octicon octicon-three-bars"]').click()
     browser.element(link_text('Sign in')).click()

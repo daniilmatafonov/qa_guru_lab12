@@ -5,6 +5,7 @@ from selene.support.shared import browser
 url = 'https://github.com/'
 browserName = 'chrome'
 
+
 @pytest.fixture(scope='function')
 def browser_config():
     browser.config.browser_name = browserName
@@ -12,14 +13,14 @@ def browser_config():
     browser.config._window_height = 480
 
 
-def test_github_desktop(browser_config):
+def test_github_signin_desktop(browser_config):
     if browser.config.window_width < 1000:
         pytest.skip('Window size for mobile version')
     browser.open(url)
     browser.element(link_text('Sign in')).click()
 
 
-def test_github_mobile(browser_config):
+def test_github_signin_mobile(browser_config):
     if browser.config.window_height > 1000:
         pytest.skip('Window size for browser version')
     browser.open(url)
