@@ -3,7 +3,7 @@ from selene.support.by import link_text
 from selene.support.shared import browser
 
 url = 'https://github.com/'
-params = pytest.fixture(params=[(320, 480), (1360, 768), (1600, 1200)])
+params = pytest.fixture(params=[(320, 480), (1360, 768), (1600, 1200), (1100, 960)])
 
 
 @params
